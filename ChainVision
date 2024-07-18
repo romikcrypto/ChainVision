@@ -1,0 +1,18 @@
+# main.py
+
+from scripts.fetch_blockchain_data import fetch_blockchain_data
+from scripts.generate_report import generate_report
+
+def main():
+    # Fetch blockchain data
+    api_key = 'your-api-key'
+    start_block = 100000
+    end_block = 100010
+    df = fetch_blockchain_data(api_key, start_block, end_block)
+    print("Blockchain data fetched and saved.")
+
+    # Generate report
+    generate_report('data/blockchain_data.csv')
+
+if __name__ == '__main__':
+    main()
